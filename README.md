@@ -5,7 +5,6 @@
 ```
 # 下载
 $ go get -v -u github.com/ohko/goTDmd
-$ go install github.com/ohko/goTDmd
 
 # 搜集当前目录下的所有TODO/FIXME，写到TODOs.md
 $ cd {you path}
