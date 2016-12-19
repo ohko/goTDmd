@@ -39,6 +39,7 @@ func main() {
 	}
 
 	out := new(bytes.Buffer)
+	out.WriteString("**注：以下内容由 `goTDmd` 自动生成，手动更改会被覆盖**\n\n")
 	if len(todos["TODO"]) > 0 {
 		out.WriteString("# TODO\n")
 		out.WriteString("1. " + strings.Join(todos["TODO"], "\n1. "))
