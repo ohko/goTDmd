@@ -75,7 +75,7 @@ func parseGoFile(path string) map[string][]string {
 			reg, _ := regexp.Compile(`TODO[:]? +(.*)`)
 			rs := reg.FindSubmatchIndex(line)
 			if len(rs) > 0 {
-				s := fmt.Sprintf("`%s:%d` %s", path, index, line[rs[2]:])
+				s := fmt.Sprintf("[%s:%d](%s#L%d) %s", path, index, path, index, line[rs[2]:])
 				todos = append(todos, s)
 			}
 		}
@@ -84,7 +84,7 @@ func parseGoFile(path string) map[string][]string {
 			reg, _ := regexp.Compile(`FIXME[:]? +(.*)`)
 			rs := reg.FindSubmatchIndex(line)
 			if len(rs) > 0 {
-				s := fmt.Sprintf("`%s:%d` %s", path, index, line[rs[2]:])
+				s := fmt.Sprintf("[%s:%d](%s#L%d) %s", path, index, path, index, line[rs[2]:])
 				fixmes = append(fixmes, s)
 			}
 		}
